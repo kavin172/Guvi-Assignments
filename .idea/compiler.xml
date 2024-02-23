@@ -10,6 +10,7 @@
         <module name="Product" />
         <module name="Account" />
         <module name="Person" />
+        <module name="Assignment4-Exception_And_Collection" />
       </profile>
     </annotationProcessing>
   </component>

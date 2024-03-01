@@ -9,6 +9,7 @@
         <module name="PersonSuperKeyword" />
         <module name="Product" />
         <module name="Account" />
+        <module name="Assignment_5" />
         <module name="Person" />
         <module name="Assignment4-Exception_And_Collection" />
       </profile>

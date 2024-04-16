@@ -16,20 +16,20 @@ public class Main {
         };
 
         Connection connection = null;
-        PreparedStatement preparedStatement = null;
+        PreparedStatement statement = null;
 
         try {
             connection = DriverManager.getConnection(DATABASE_URL, USER, PASSWORD);
 
-            preparedStatement = connection.prepareStatement(INSERT_QUERY);
+            statement = connection.prepareStatement(INSERT_QUERY);
 
             for (Object[] employee : employees) {
-                preparedStatement.setInt(1, (Integer) employee[0]);
-                preparedStatement.setString(2, (String) employee[1]);
-                preparedStatement.setInt(3, (Integer) employee[2]);
-                preparedStatement.setInt(4, (Integer) employee[3]);
+                statement.setInt(1, (Integer) employee[0]);
+                statement.setString(2, (String) employee[1]);
+                statement.setInt(3, (Integer) employee[2]);
+                statement.setInt(4, (Integer) employee[3]);
 
-                preparedStatement.executeUpdate();
+                statement.executeUpdate();
             }
 
             System.out.println("Data inserted successfully!");
@@ -37,10 +37,9 @@ public class Main {
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
-            // Close the statement and connection
-            if (preparedStatement != null) {
+            if (statement != null) {
                 try {
-                    preparedStatement.close();
+                    statement.close();
                 } catch (SQLException e) {
                     e.printStackTrace();
                 }
